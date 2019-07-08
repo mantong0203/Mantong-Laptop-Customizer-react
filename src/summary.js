@@ -4,8 +4,11 @@ import summaryItem from './summaryItem';
 export default function Summary(props) {
     const summary = Object.keys(props.selected)
     .map(key => {
-      return <summaryItem key={key} id={key} selected={props.selected} />
-    })
+      return <summaryItem 
+      key={key} 
+      id={key} 
+      selected={props.selected} />;
+    });
   
     const total = Object.keys(props.selected)
       .reduce((acc, curr) => acc + props.selected[curr].cost, 0);  
